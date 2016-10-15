@@ -1,0 +1,11 @@
+<select ng-model="selection" ng-options="sortOption for sortOption in sortOptions" ng-change="sort(selection)"></select>
+<h4>{{ 'REVIEWS_LIST_TITLE' | translate }}</h4>
+<ul>
+  <li dir-paginate="review in reviews | orderBy:sortKey:reverse | itemsPerPage:2">
+    <h4>{{review.nickname}}</h4>
+    <p>{{review.body}}</p>
+    <p>{{review.date | date: "y.MM.dd.m.H.s"}}</p>
+  </li>
+</ul>
+
+<dir-pagination-controls max-size="5" direction-links="true" boundry-links="true"></dir-pagination-controls>
