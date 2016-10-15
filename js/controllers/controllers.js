@@ -7,9 +7,7 @@ angular.module('myApp')
   .controller('ReviewController', ['$translate', '$scope', function ($translate, $scope) {
 
     $scope.reviews = reviews;
-    $scope.formReview = "./templates/form_reviews.html";
-    $scope.reviewsList = "./templates/reviews_list.html";
-    $scope.sortOptions = ['Oldest', 'Newest'];
+    $scope.sortOptions = ['Created (Asc)', 'Created (Dsc)'];
 
     $scope.addReview = function () {
       reviews.push({

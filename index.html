@@ -3,22 +3,27 @@
 
 <head>
   <link data-require="bootstrap-css@*" data-semver="3.3.1" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body ng-controller="TranslateController as trans">
-  <div>
-    <p>{{ 'TITLE' | translate }}</p>
+
+  <section class="choose_lang">
+    {{ 'TITLE' | translate }}
     <button ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN"></button>
     <button ng-click="changeLanguage('fr')" translate="BUTTON_LANG_FR"></button>
+  </section>
 
+  <section>
     <!--    Form Review  -->
-    <div ng-include="'./templates/form_reviews.html'"></div>
+    <div class="form_review" ng-include="'./templates/form_reviews.html'"></div>
 
     <!--     Review List-->
-    <div ng-controller="ReviewController as review">
+    <div class="review_list" ng-controller="ReviewController as review">
       <reviews-list></reviews-list>
     </div>
-  </div>
+  </section>
+
 
   <script src="js/bower_components/angular/angular.js"></script>
   <script src="js/bower_components/angular-translate/angular-translate.js"></script>

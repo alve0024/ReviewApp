@@ -2,9 +2,11 @@
 <h4>{{ 'REVIEWS_LIST_TITLE' | translate }}</h4>
 <ul>
   <li dir-paginate="review in reviews | orderBy:sortKey:reverse | itemsPerPage:2">
-    <h4>{{review.nickname}}</h4>
-    <p>{{review.body}}</p>
-    <p>{{review.date | date: "y.MM.dd.m.H.s"}}</p>
+    <div class="revcell">
+      <h5>{{review.nickname}}</h5>
+      <p>{{review.body}}</p>
+      <p>{{review.date | date: "y.MM.dd.m.H.s"}}</p>
+    </div>
   </li>
 </ul>
 
